@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\ConsumerRegistrationMail;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -63,11 +65,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Consumer::create([
+        $user = Consumer::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        Mail::to($data['email'])->send(new ConsumerRegistrationMail($user));
+
+        return $user;
     }
 
     /**
