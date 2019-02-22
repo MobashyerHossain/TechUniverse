@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('base.pages.mainhome');
-});
+    return view('base.pages.index');
+})->name('index');
 
 //admin auth routes
 Route::group(['prefix' => 'admin'], function () {

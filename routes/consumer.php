@@ -8,5 +8,4 @@ Route::get('/home', function () {
     //dd($users);
 
     return view('consumer.home');
-})->name('home');
-
+})->name('consumer.home');

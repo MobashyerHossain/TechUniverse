@@ -8,5 +8,4 @@ Route::get('/home', function () {
     //dd($users);
 
     return view('admin.home');
-})->name('home');
-
+})->name('admin.home');

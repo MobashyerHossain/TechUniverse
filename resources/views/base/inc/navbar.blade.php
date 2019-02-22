@@ -1,9 +1,20 @@
-<div class="top-right links">
-    @auth
-        <a href="{{ url('/home') }}">Home</a>
-    @else
-        <a href="{{ route('consumer.login') }}">Login</a>
+<nav class="navbar sticky-top navbar-dark bg-dark text-light p-1">
+  <div class="row m-0 p-0 w-100">
+    <div class="col-3 text-center">
+      <a href="" class="nav-link text-light">
+        <h3>Tech Universe</h3>
+      </a>
+    </div>
+    <div class="col-4">
+      <div class="input-group mt-2">
+        <input id="SearchInput" class="form-control no-outline rounded-0 border-0 p-1 pl-3 pr-3" style="font-size:13px;" type="text" placeholder="Search Product by Type, Brand, Series or Name...">
+      </div>
+    </div>
+    <div class="col-3">
 
-        <a href="{{ route('consumer.egister') }}">Register</a>
-    @endauth
-</div>
+    </div>
+    <div class="col-3">
+
+    </div>
+  </div>
+</nav>
