@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models\MultiAuth;
+namespace App;
 
-use App\Notifications\Consumer\ConsumerResetPassword;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Consumer extends Authenticatable
+class User extends Authenticatable
 {
     use Notifiable;
 
@@ -27,16 +27,4 @@ class Consumer extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * Send the password reset notification.
-     *
-     * @param  string  $token
-     * @return void
-     */
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ConsumerResetPassword($token));
-    }
-
 }
