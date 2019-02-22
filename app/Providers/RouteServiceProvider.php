@@ -39,7 +39,49 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapAdminRoutes();
+
+        $this->mapConsumerRoutes();
+
         //
+    }
+
+    /**
+     * Define the "consumer" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapConsumerRoutes()
+    {
+        Route::group([
+            'middleware' => ['web', 'consumer', 'auth:consumer'],
+            'prefix' => 'consumer',
+            'as' => 'consumer.',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/consumer.php');
+        });
+    }
+
+    /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::group([
+            'middleware' => ['web', 'admin', 'auth:admin'],
+            'prefix' => 'admin',
+            'as' => 'admin.',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/admin.php');
+        });
     }
 
     /**
