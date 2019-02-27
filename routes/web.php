@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('base.pages.index');
-})->name('index');
+Route::get('/', 'PageController@index')->name('index');
 
 //admin auth routes
 Route::group(['prefix' => 'admin'], function () {

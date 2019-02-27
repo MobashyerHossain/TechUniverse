@@ -1,7 +1,7 @@
 <nav class="navbar sticky-top navbar-dark bg-dark text-light p-1">
   <div class="row m-0 p-0 w-100">
     <div class="col-3 text-center">
-      <a href="" class="nav-link text-light">
+      <a href="{{route('index')}}" class="nav-link text-light">
         <h3>Tech Universe</h3>
       </a>
     </div>

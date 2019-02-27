@@ -15,6 +15,17 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->double('buying_price', 5, 2);      //for showroom
+            $table->double('selling_price', 5, 2);     //for consumer
+            $table->float('max_possible_discount')->nullable();
+            $table->float('current_discount')->nullable();
+
+            //foreign key
+            $table->integer('series_id')->unsigned();
+            $table->foreign('series_id')->references('id')->on('series')->onDelete('cascade');
+            $table->integer('image_id')->unsigned()->default(2);
+            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->timestamps();
         });
     }

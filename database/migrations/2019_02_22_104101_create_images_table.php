@@ -15,6 +15,8 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
+            $table->enum('type', ['default', 'profile_pic', 'brand_logo', 'product_image', 'other', 'banner'])->default('default');
+            $table->string('path');
             $table->timestamps();
         });
     }

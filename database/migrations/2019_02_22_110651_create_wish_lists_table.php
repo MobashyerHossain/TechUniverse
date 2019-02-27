@@ -14,7 +14,13 @@ class CreateWishListsTable extends Migration
     public function up()
     {
         Schema::create('wish_lists', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id');            
+
+            //foreign key
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->integer('consumer_id')->unsigned();
+            $table->foreign('consumer_id')->references('id')->on('consumers')->onDelete('cascade');
             $table->timestamps();
         });
     }
