@@ -18,7 +18,7 @@ class RedirectIfConsumer
 	public function handle($request, Closure $next, $guard = 'consumer')
 	{
 	    if (Auth::guard($guard)->check()) {
-	        return redirect('consumer/home');
+	        return route('consumer.home');
 	    }
 
 	    return $next($request);

@@ -44,3 +44,18 @@ Route::group(['prefix' => 'consumer'], function () {
   Route::get('/password/reset', 'MultiAuthControllers\ConsumerAuth\ForgotPasswordController@showLinkRequestForm')->name('consumer.password.reset');
   Route::get('/password/reset/{token}', 'MultiAuthControllers\ConsumerAuth\ResetPasswordController@showResetForm');
 });
+
+//Resource Routes
+Route::resource('images', 'ModelControllers\ImageController');
+Route::resource('addresses', 'ModelControllers\AddressController');
+Route::resource('phonenumbers', 'ModelControllers\PhoneNumberController');
+Route::resource('adminroles', 'ModelControllers\AdminRoleController');
+Route::resource('brands', 'ModelControllers\BrandController');
+Route::resource('series', 'ModelControllers\SeriesController');
+Route::resource('products', 'ModelControllers\ProductController');
+Route::resource('cartitems', 'ModelControllers\CartItemController');
+Route::resource('invoices', 'ModelControllers\InvoiceController');
+Route::resource('productviews', 'ModelControllers\ProductViewController');
+Route::resource('roles', 'ModelControllers\RoleController');
+Route::resource('specifications', 'ModelControllers\SpecificationController');
+Route::resource('wishlists', 'ModelControllers\WishListController');

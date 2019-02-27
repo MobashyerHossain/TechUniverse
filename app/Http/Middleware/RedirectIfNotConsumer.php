@@ -18,7 +18,7 @@ class RedirectIfNotConsumer
 	public function handle($request, Closure $next, $guard = 'consumer')
 	{
 	    if (!Auth::guard($guard)->check()) {
-	        return redirect('consumer/login');
+	        return route('consumer.login');
 	    }
 
 	    return $next($request);
