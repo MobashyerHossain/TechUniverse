@@ -15,12 +15,12 @@ class CreateBrandsTable extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('type', ['Laptop', 'Smart Phone', 'Head Phone', 'Smart Watch']);
+            $table->enum('type', ['laptop', 'smart_phone', 'head_phone', 'smart_watch']);
             $table->string('name')->unique();   //ASUS, HP
-            $table->string('details', 500);
+            $table->string('details', 1000);
 
             //foreign key
-            $table->integer('logo')->unsigned()->default(4);
+            $table->integer('logo')->unsigned()->default(3);
             $table->foreign('logo')->references('id')->on('images')->onDelete('cascade');
             $table->timestamps();
         });

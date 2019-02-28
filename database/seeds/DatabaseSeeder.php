@@ -14,6 +14,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             'ImageSeeder',
+            'RoleSeeder',
+            'ConsumerSeeder',
+            'AdminSeeder',
+            'BrandSeeder',
+            'SeriesSeeder',
+            'ProductSeeder',
         ]);
     }
 }

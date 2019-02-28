@@ -22,7 +22,7 @@ class CreateConsumersTable extends Migration
             $table->boolean('verification_status')->default(false);
 
             //foreign keys
-            $table->integer('profile_pic')->unsigned()->default(1);
+            $table->integer('profile_pic')->unsigned()->default(2);
             $table->foreign('profile_pic')->references('id')->on('images')->onDelete('cascade');
             $table->integer('address_id')->unsigned()->nullable();
             $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade');

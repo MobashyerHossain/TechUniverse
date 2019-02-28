@@ -15,8 +15,8 @@ class CreateSeriesTable extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');             //GT
-            $table->string('details', 500);
+            $table->string('name')->unique();             //pavillion
+            $table->string('details', 1000);
 
             //foreign key
             $table->integer('brand_id')->unsigned();

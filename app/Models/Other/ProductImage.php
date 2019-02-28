@@ -9,6 +9,6 @@ use App\Models\Other\Image;
 class ProductImage extends Model
 {
     public function getImage(){
-        return (Image::find($this->image_id))->path;
+        return Image::find($this->image_id);
     }
 }
