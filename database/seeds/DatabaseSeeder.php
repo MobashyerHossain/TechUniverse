@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'BrandSeeder',
             'SeriesSeeder',
             'ProductSeeder',
+            'ProductImageSeeder',
         ]);
     }
 }
