@@ -131,6 +131,13 @@ class ProductImageSeeder extends Seeder
                         'ASUS_ROG_3_3',
                         'ASUS_ROG_3_4',
                     ),
+
+                    array(    //product array
+                        'ASUS_ROG_4_1',
+                        'ASUS_ROG_4_2',
+                        'ASUS_ROG_4_3',
+                        'ASUS_ROG_4_4',
+                    ),
                 ),
 
                 array(        //ASUS_VivoBook series product images
@@ -154,6 +161,13 @@ class ProductImageSeeder extends Seeder
                         'ASUS_VivoBook_3_3',
                         'ASUS_VivoBook_3_4',
                     ),
+
+                    array(    //product array
+                        'ASUS_VivoBook_4_1',
+                        'ASUS_VivoBook_4_2',
+                        'ASUS_VivoBook_4_3',
+                        'ASUS_VivoBook_4_4',
+                    ),
                 ),
 
                 array(        //ASUS_TUF series product images
@@ -176,6 +190,13 @@ class ProductImageSeeder extends Seeder
                         'ASUS_TUF_3_2',
                         'ASUS_TUF_3_3',
                         'ASUS_TUF_3_4',
+                    ),
+
+                    array(    //product array
+                        'ASUS_TUF_4_1',
+                        'ASUS_TUF_4_2',
+                        'ASUS_TUF_4_3',
+                        'ASUS_TUF_4_4',
                     ),
                 ),
 
@@ -217,13 +238,6 @@ class ProductImageSeeder extends Seeder
                         'MSI_GL_2_2',
                         'MSI_GL_2_3',
                         'MSI_GL_2_4',
-                    ),
-
-                    array(    //product array
-                        'MSI_GL_3_1',
-                        'MSI_GL_3_2',
-                        'MSI_GL_3_3',
-                        'MSI_GL_3_4',
                     ),
                 ),
 
@@ -493,10 +507,10 @@ class ProductImageSeeder extends Seeder
                     ),
 
                     array(    //product array
-                        'APPLE_MacBook_Pro_3_1',
-                        'APPLE_MacBook_Pro_3_2',
-                        'APPLE_MacBook_Pro_3_3',
-                        'APPLE_MacBook_Pro_3_4',
+                        'APPLE_MacBook_Pro_4_1',
+                        'APPLE_MacBook_Pro_4_2',
+                        'APPLE_MacBook_Pro_4_3',
+                        'APPLE_MacBook_Pro_4_4',
                     ),
                 ),
 
