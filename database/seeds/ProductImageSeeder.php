@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Shop\Brand;
+use App\Models\Shop\Product;
+use App\Models\Other\Image;
 
 class ProductImageSeeder extends Seeder
 {
@@ -310,6 +312,13 @@ class ProductImageSeeder extends Seeder
                         'LENOVO_ThinkPad_3_3',
                         'LENOVO_ThinkPad_3_4',
                     ),
+
+                    array(    //product array
+                        'LENOVO_ThinkPad_4_1',
+                        'LENOVO_ThinkPad_4_2',
+                        'LENOVO_ThinkPad_4_3',
+                        'LENOVO_ThinkPad_4_4',
+                    ),
                 ),
 
                 array(        //LENOVO_Ideapad series product images
@@ -333,6 +342,13 @@ class ProductImageSeeder extends Seeder
                         'LENOVO_Ideapad_3_3',
                         'LENOVO_Ideapad_3_4',
                     ),
+
+                    array(    //product array
+                        'LENOVO_Ideapad_4_1',
+                        'LENOVO_Ideapad_4_2',
+                        'LENOVO_Ideapad_4_3',
+                        'LENOVO_Ideapad_4_4',
+                    ),
                 ),
 
                 array(        //LENOVO_Legion series product images
@@ -355,6 +371,13 @@ class ProductImageSeeder extends Seeder
                         'LENOVO_Legion_3_2',
                         'LENOVO_Legion_3_3',
                         'LENOVO_Legion_3_4',
+                    ),
+
+                    array(    //product array
+                        'LENOVO_Legion_4_1',
+                        'LENOVO_Legion_4_2',
+                        'LENOVO_Legion_4_3',
+                        'LENOVO_Legion_4_4',
                     ),
                 ),
 
@@ -516,41 +539,47 @@ class ProductImageSeeder extends Seeder
 
                 array(        //APPLE_MackBook Air series product images
                     array(    //product array
-                        'APPLE_MackBook_Air_1_1',
-                        'APPLE_MackBook_Air_1_2',
-                        'APPLE_MackBook_Air_1_3',
-                        'APPLE_MackBook_Air_1_4',
+                        'APPLE_MacBook_Air_1_1',
+                        'APPLE_MacBook_Air_1_2',
+                        'APPLE_MacBook_Air_1_3',
+                        'APPLE_MacBook_Air_1_4',
                     ),
 
                     array(    //product array
-                        'APPLE_MackBook_Air_2_1',
-                        'APPLE_MackBook_Air_2_2',
-                        'APPLE_MackBook_Air_2_3',
-                        'APPLE_MackBook_Air_2_4',
+                        'APPLE_MacBook_Air_2_1',
+                        'APPLE_MacBook_Air_2_2',
+                        'APPLE_MacBook_Air_2_3',
+                        'APPLE_MacBook_Air_2_4',
                     ),
 
                     array(    //product array
-                        'APPLE_MackBook_Air_3_1',
-                        'APPLE_MackBook_Air_3_2',
-                        'APPLE_MackBook_Air_3_3',
-                        'APPLE_MackBook_Air_3_4',
+                        'APPLE_MacBook_Air_3_1',
+                        'APPLE_MacBook_Air_3_2',
+                        'APPLE_MacBook_Air_3_3',
+                        'APPLE_MacBook_Air_3_4',
                     ),
                 ),
             ),
         );
 
+        $i = 1;
         foreach ($laptops as $key=>$laptopbrand) {
             $brand = Brand::find($key+1);
-            $brand_name = $brand->name;
-
             foreach ($laptopbrand as $laptopseries) {
                 foreach ($laptopseries as $laptop) {
+                    $prod = Product::find($i);
                     foreach ($laptop as $laptopimg) {
                         DB::table('images')->insert([
                             'type' => 'product_image',
-                            'path' => 'storage/images/product/Laptop/'.$brand_name.'/'.$laptopimg.'.png',
+                            'path' => 'storage/images/product/'.$brand->type.'/'.$brand->name.'/'.$laptopimg.'.png',
+                        ]);
+                        $img = Image::orderBy('created_at', 'desc')->first();
+                        DB::table('product_images')->insert([
+                            'product_id' => $prod->id,
+                            'image_id' => $img->id,
                         ]);
                     }
+                    $i++;
                 }
             }
         }

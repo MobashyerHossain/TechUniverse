@@ -148,7 +148,7 @@ class SeriesSeeder extends Seeder
                     ),
 
                     array(              //Series Array      //series_id = 21
-                      'name' => 'MackBook Air',
+                      'name' => 'MacBook Air',
                       'details' => 'The most loved Mac is about to make you fall in love all over again. Available in silver, space gray, and gold, the new thinner and lighter MacBook Air features a brilliant Retina display, Touch ID, the latest-generation keyboard, and a Force Touch trackpad. The iconic wedge is created from 100 percent recycled aluminum, making it the greenest Mac ever.1 And with all-day battery life, MacBook Air is your perfectly portable,       do-it-all notebook.With a resolution of 2560-by-1600 for over 4 million pixels, the results are positively jaw dropping. Images take on a new level of detail and realism.',
                       'brand_id' => 6,
                     ),

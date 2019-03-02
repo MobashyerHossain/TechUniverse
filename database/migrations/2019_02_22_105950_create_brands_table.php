@@ -15,7 +15,7 @@ class CreateBrandsTable extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('type', ['laptop', 'smart_phone', 'head_phone', 'smart_watch']);
+            $table->enum('type', ['Laptop', 'Smart Phone', 'Head Phone', 'Smart Watch']);
             $table->string('name')->unique();   //ASUS, HP
             $table->string('details', 1000);
 

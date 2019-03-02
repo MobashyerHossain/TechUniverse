@@ -4,7 +4,9 @@
 
 @section('content')
   @include('base.inc.banner')
-  <div class="content">    
-      <h1 class="text-center">dfgerhb</h1>
+  <div class="content">
+      <div style="margin:30px 60px;">
+          @include('base.inc.category')
+      </div>
   </div>
 @endsection
