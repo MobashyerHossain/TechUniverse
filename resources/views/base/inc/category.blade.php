@@ -12,10 +12,10 @@
       </div>
   </div>
 
-  <!-- Part Categories -->
+  <!-- Brands -->
   @foreach($brands as $brand)
   <div style="margin:30px 0px;">
-      <!-- categories header -->
+      <!-- Brand Header -->
       <div class="row" style="padding:0px;margin-bottom:10px;margin-right:0px;margin-left:0px;">
           <div class="col-3 align-self-center" style="padding:0px;">
               <h4 class="text-uppercase d-inline" style="margin:0px;color:rgba(33,37,41,0.8);">{{$brand->name}}</h4>
@@ -25,16 +25,16 @@
           </div>
       </div>
 
-      <!-- category show -->
+      <!-- Show Brand -->
       <div class="row" style="margin:0px;background-color:#ffffff;padding:0px;">
-          <!-- category image -->
+          <!-- Brand image -->
           <div class="col-2">
-              <a href="">
+              <a href="{{route('brands.show', $brand)}}">
                 <img class="m-0 p-0" src="{{url($brand->getLogo()->path)}}" style="width:100%; height:100%; object-fit:contain;" alt="">
               </a>
           </div>
 
-          <!-- sub categories -->
+          <!-- Show Series -->
           <div class="col">
               <div class="row">
                   @foreach($brand->getSeries() as $series)

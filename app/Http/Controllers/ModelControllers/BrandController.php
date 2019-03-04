@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ModelControllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Shop\Brand;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -46,7 +47,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        //
+        return view('base.pages.brand')->with('brand', $brand);
     }
 
     /**

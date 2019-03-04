@@ -114,13 +114,13 @@ return [
     'passwords' => [
         'admins' => [
             'provider' => 'admins',
-            'table' => 'admin_password_resets',
+            'table' => 'password_resets',
             'expire' => 60,
         ],
 
         'consumers' => [
             'provider' => 'consumers',
-            'table' => 'consumer_password_resets',
+            'table' => 'password_resets',
             'expire' => 60,
         ],
 

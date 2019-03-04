@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PageController@index')->name('index');
+Route::get('/', 'OtherControllers\PageController@index')->name('index');
 
 //admin auth routes
 Route::group(['prefix' => 'admin'], function () {
@@ -48,6 +48,7 @@ Route::resource('images', 'ModelControllers\ImageController');
 Route::resource('addresses', 'ModelControllers\AddressController');
 Route::resource('phonenumbers', 'ModelControllers\PhoneNumberController');
 Route::resource('adminroles', 'ModelControllers\AdminRoleController');
+Route::resource('categoris', 'ModelControllers\CategoryController');
 Route::resource('brands', 'ModelControllers\BrandController');
 Route::resource('series', 'ModelControllers\SeriesController');
 Route::resource('products', 'ModelControllers\ProductController');

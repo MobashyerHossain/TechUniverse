@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ModelControllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Other\Image;
 use Illuminate\Http\Request;
 

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\ModelControllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\MultiAuthSupport\AdminRole;
+use App\Models\Shop\Category;
 use Illuminate\Http\Request;
 
-class AdminRoleController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +41,10 @@ class AdminRoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MultiAuthSupport\AdminRole  $adminRole
+     * @param  \App\Models\Shop\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(AdminRole $adminRole)
+    public function show(Category $category)
     {
         //
     }
@@ -53,10 +52,10 @@ class AdminRoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MultiAuthSupport\AdminRole  $adminRole
+     * @param  \App\Models\Shop\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(AdminRole $adminRole)
+    public function edit(Category $category)
     {
         //
     }
@@ -65,10 +64,10 @@ class AdminRoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MultiAuthSupport\AdminRole  $adminRole
+     * @param  \App\Models\Shop\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AdminRole $adminRole)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -76,10 +75,10 @@ class AdminRoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MultiAuthSupport\AdminRole  $adminRole
+     * @param  \App\Models\Shop\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AdminRole $adminRole)
+    public function destroy(Category $category)
     {
         //
     }
