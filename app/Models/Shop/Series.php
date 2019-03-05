@@ -12,14 +12,12 @@ use App\Models\Other\ProductImage;
 class Series extends Model
 {
     public function getImage(){
-        $ProIds = Product::where('series_id', '=', $this->id)->pluck('id');
-        $proImg = ProductImage::whereIn('product_id', $ProIds)->inRandomOrder()->first();
-        $img = Image::find($proImg->image_id);
-        return $img;
+        $randProduct = $this->getProducts()->random();
+        return $randProduct->getImage();
     }
 
     public function getProducts(){
-        return Product::where('series_id', '=', $this->id)->get();
+        return Product::where('series_id', '=', $this->id)->inRandomOrder()->get();
     }
 
     public function getBrand(){

@@ -47,7 +47,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        return view('base.pages.brand')->with('brand', $brand);
+        return view('base.pages.singleBrand')->with('brand', $brand);
     }
 
     /**

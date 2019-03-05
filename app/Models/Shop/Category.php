@@ -14,6 +14,6 @@ class Category extends Model
     }
 
     public function getBrands(){
-        return Brand::where('category_id', '=', $this->id)->get();
+        return Brand::where('category_id', '=', $this->id)->inRandomOrder()->get();
     }
 }

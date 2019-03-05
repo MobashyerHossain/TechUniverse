@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\ModelControllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Shop\Category;
 use Illuminate\Http\Request;
 
@@ -46,7 +47,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('base.pages.singleCategory')->with('category', $category);
     }
 
     /**

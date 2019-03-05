@@ -48,7 +48,7 @@ Route::resource('images', 'ModelControllers\ImageController');
 Route::resource('addresses', 'ModelControllers\AddressController');
 Route::resource('phonenumbers', 'ModelControllers\PhoneNumberController');
 Route::resource('adminroles', 'ModelControllers\AdminRoleController');
-Route::resource('categoris', 'ModelControllers\CategoryController');
+Route::resource('categories', 'ModelControllers\CategoryController');
 Route::resource('brands', 'ModelControllers\BrandController');
 Route::resource('series', 'ModelControllers\SeriesController');
 Route::resource('products', 'ModelControllers\ProductController');

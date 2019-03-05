@@ -18,7 +18,7 @@ class Product extends Model
     public function getImage(){
         $all = ProductImage::where('product_id', '=', $this->id)->pluck('image_id');
 
-        return Image::whereIn('id',$all)->inRandomOrder()->first();
+        return Image::whereIn('id',$all)->first();
     }
 
     public function getSeries(){
@@ -29,16 +29,33 @@ class Product extends Model
         return Specification::where('product_id', '=', $this->id)->get();
     }
 
+    public function getNormalPrice(){
+      return '$ '.(number_format((float)$this->selling_price, 2, '.', ''));
+    }
+
     public function getBuyingPrice(){
       return '$ '.(number_format((float)$this->buying_price, 2, '.', ''));
     }
 
     public function getDiscountedPrice(){
-      $discountedprice = ($this->selling_price - ($this->current_discount*$this->selling_price));
-      return '$ '.(number_format((float)$discountedprice, 2, '.', ''));
+      $price = ($this->selling_price - ($this->current_discount*$this->selling_price));
+      return '$ '.(number_format((float)$price, 2, '.', ''));
     }
 
     public function getDiscount(){
       return '- '.($this->current_discount*100).' %';
+    }
+
+    public function getTotalViews(){
+        return 0;
+    }
+
+    public function getShortedName($len){
+      if(strlen($this->name) > $len){
+        return substr($this->name, 0, $len).'...';
+      }
+      else{
+        return $this->name;
+      }
     }
 }

@@ -47,7 +47,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('base.pages.singleProduct')->with('product', $product);
     }
 
     /**

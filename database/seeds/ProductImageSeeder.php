@@ -43,24 +43,24 @@ class ProductImageSeeder extends Seeder
 
                 array(        //HP_Specter series product images
                     array(    //product array
-                        'HP_Specter_1_1',
-                        'HP_Specter_1_2',
-                        'HP_Specter_1_3',
-                        'HP_Specter_1_4',
+                        'HP_Spectre_1_1',
+                        'HP_Spectre_1_2',
+                        'HP_Spectre_1_3',
+                        'HP_Spectre_1_4',
                     ),
 
                     array(    //product array
-                        'HP_Specter_2_1',
-                        'HP_Specter_2_2',
-                        'HP_Specter_2_3',
-                        'HP_Specter_2_4',
+                        'HP_Spectre_2_1',
+                        'HP_Spectre_2_2',
+                        'HP_Spectre_2_3',
+                        'HP_Spectre_2_4',
                     ),
 
                     array(    //product array
-                        'HP_Specter_3_1',
-                        'HP_Specter_3_2',
-                        'HP_Specter_3_3',
-                        'HP_Specter_3_4',
+                        'HP_Spectre_3_1',
+                        'HP_Spectre_3_2',
+                        'HP_Spectre_3_3',
+                        'HP_Spectre_3_4',
                     ),
                 ),
 
@@ -571,7 +571,7 @@ class ProductImageSeeder extends Seeder
                     foreach ($laptop as $laptopimg) {
                         DB::table('images')->insert([
                             'type' => 'product_image',
-                            'path' => 'storage/images/product/'.$brand->type.'/'.$brand->name.'/'.$laptopimg.'.png',
+                            'path' => 'storage/images/product/'.$brand->getCategory()->name.'/'.$brand->name.'/'.$laptopimg.'.png',
                         ]);
                         $img = Image::orderBy('created_at', 'desc')->first();
                         DB::table('product_images')->insert([

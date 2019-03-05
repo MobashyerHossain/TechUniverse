@@ -1,10 +1,10 @@
 @extends('base.layout.app')
 
-@section('title', $product->name)
+@section('title', $category->name)
 
 @section('content')
   <div class="content">
-
+    {{$category}}
   </div>
 
 @endsection
