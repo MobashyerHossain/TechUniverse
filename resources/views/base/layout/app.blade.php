@@ -49,7 +49,7 @@
 </head>
 <body style="background-color:#f1f1f1;font-family:'Times New Roman', Times, serif;">
     <div id="app">
-        @include('base.inc.navbar')
+        @include('base.inc.nav.navbar')
         <main class="">
             @yield('content')
         </main>
