@@ -15,7 +15,7 @@
     <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>
 
     <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!--get local file and add those -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Fonts -->
@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('FrontEnd/Consumers/assets/css/Navigation-Clean.css') }}">
     <link rel="stylesheet" href="{{ asset('FrontEnd/Consumers/assets/css/Navigation-with-Search.css') }}">
     <link rel="stylesheet" href="{{ asset('FrontEnd/Consumers/assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('FrontEnd/Consumers/assets/js/jquery.min.js') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     @yield('style')

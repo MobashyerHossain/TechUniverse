@@ -16,7 +16,7 @@ $factory->define(Consumer::class, function (Faker $faker) {
       'last_name' => $faker->lastname,
       'date_of_birth' => $faker->date,
       'email' => $faker->unique()->safeEmail,
-      'password' => Hash::make('741852'),
+      'password' => bcrypt('741852'),
       'address_id' => $address->id,
       'phone_number_id' => $phone->id,
       'verification_status' => true,

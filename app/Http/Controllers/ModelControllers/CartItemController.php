@@ -36,7 +36,13 @@ class CartItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cartItem = new Cart();
+        $cartItem->quantity = $request->Input('quantity');
+        $cartItem->part_id = $request->Input('part_id');
+        $cartItem->consumer_id = Auth::id();
+        $cartItem->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +87,22 @@ class CartItemController extends Controller
      */
     public function destroy(CartItem $cartItem)
     {
-        //
+        $cartItem->delete();
+
+        return redirect()->back();
+    }
+
+    public function deleteAllfromCart($consumer_Id){
+        $carts = Cart::where('consumer_id', $consumer_Id)->where('sold', false)->get();
+
+        foreach ($carts as $cart) {
+            $cart->delete();
+        }
+
+        return redirect()->back();
+    }
+
+    public function showMyOrders(){
+      return view('multiAuth.consumer.pages.myOrders');
     }
 }

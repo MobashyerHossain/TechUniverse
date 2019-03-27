@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class ProductView extends Model
 {
     public function getViewedProductList(){
-        return ProductView::find($this->image_id);
+        return ProductView::find($this->consumer_id);
     }
 }

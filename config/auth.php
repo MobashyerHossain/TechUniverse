@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'consumer',
+        'passwords' => 'consumers',
     ],
 
     /*
@@ -36,17 +36,29 @@ return [
     */
 
     'guards' => [
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins',
-        ],
-
+        //consumer
         'consumer' => [
             'driver' => 'session',
             'provider' => 'consumers',
         ],
 
-        'web' => [
+        'consumer-api' => [
+            'driver' => 'token',
+            'provider' => 'consumers',
+        ],
+
+        //admin
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
+
+        /*'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
@@ -54,7 +66,7 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
-        ],
+        ],*/
     ],
 
     /*
@@ -84,16 +96,6 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\MultiAuth\Consumer::class,
         ],
-
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
-        ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
@@ -120,12 +122,6 @@ return [
 
         'consumers' => [
             'provider' => 'consumers',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
-
-        'users' => [
-            'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
         ],

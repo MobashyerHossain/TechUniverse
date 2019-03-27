@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top shadow bg-white p-1">
+<nav class="navbar sticky-top shadow bg-white p-0">
     <div class="row m-0 p-0 w-100">
         <!--logo-->
         <div class="col-3 text-center">
@@ -17,3 +17,12 @@
         @include('base.inc.nav.cart')
     </div>
 </nav>
+
+<!-- Login Modal -->
+@include('base.inc.modals.loginModal')
+
+<!-- Register Modal -->
+@include('base.inc.modals.registrationModal')
+
+<!-- Checkout Modal -->
+@include('base.inc.modals.paymentModal')

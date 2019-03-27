@@ -4,7 +4,7 @@
   $categories = App\Models\Shop\Category::all();
 ?>
 <!--Search Engine-->
-<div class="col-4 mt-1">
+<div class="col-5 mt-1">
     <div class="input-group border-bottom border-secondary">
       <div class="input-group-prepend">
         <!--Search Button-->
@@ -16,7 +16,7 @@
     </div>
 
     <!--Search Items-->
-    <div id="search_box" class="rounded-0 p-0 bg-white collapse border" id="searchBoxcollapse" style="position:absolute; top:75px; left:0px; width:800px; height:370px;">
+    <div id="search_box" class="rounded-0 p-0 bg-white collapse border" id="searchBoxcollapse" style="position:absolute; top:60px; left:0px; width:800px; height:370px;">
         <div id="searchlist" style="width:798px; margin-top:10px;">
             <div class="row m-0 p-0">
                 <!--Products-->

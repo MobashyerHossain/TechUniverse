@@ -4,7 +4,9 @@ namespace App\Http\Controllers\ModelControllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Other\Image;
+use App\Models\MultiAuth\Consumer;
 use Illuminate\Http\Request;
+use Auth;
 
 class ImageController extends Controller
 {
@@ -37,6 +39,48 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function storeProfilePicture(Request $request)
+    {
+        if($request->hasFile('profile_pic')){
+          // filename with .ext
+          $filenameExt = $request->file('profile_pic')->getClientOriginalName();
+          // filename without .ext
+          $filename = pathinfo($filenameExt, PATHINFO_FILENAME);
+          // get .ext
+          $extension = $request->file('profile_pic')->getClientOriginalExtension();
+          // stored path
+          $newfilename = $filename.'_'.time().'.'.$extension;
+          // upload image
+          $path = $request->file('profile_pic')->storeAs('public/images/Profile Pic/', $newfilename);
+          //final pathname
+          $finalpathname = 'storage/images/Profile Pic/'.$newfilename;
+
+          $image = Image::create([
+            'path' => $finalpathname,
+            'type' => 'profile_pic',
+          ]);
+
+          if($request->Input('user_type') == 'consumer'){
+            $consumer = Consumer::find(Auth::id());
+            $consumer->profile_pic = $image->id;
+            $consumer->save();
+          }
+          else if($request->Input('user_type') == 'admin'){
+            $admin = Admin::find(Auth::guard('admin')->id());
+            $admin->profile_pic = $image->id;
+            $admin->save();
+          }
+          else{
+            return redirect()->back();
+          }
+
+          return redirect()->back();
+        }
+        else{
+            return redirect()->back();
+        }
     }
 
     /**
